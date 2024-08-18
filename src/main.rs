@@ -83,7 +83,7 @@ impl Lexer {
                         _ => TokenKind::Identifier,
                     };
 
-                    println!("{:?}", kind);
+                    tokens.push(Token::new(kind, buffer));
                 }
                 _ => self.counter += 1,
             }
