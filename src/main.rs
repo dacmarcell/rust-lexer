@@ -58,8 +58,8 @@ impl Lexer {
                                 't' => buffer.push('\t'),
                                 _ => {}
                             }
-                        } else {
                         }
+
                         buffer.push(self.current_char());
                         self.counter += 1;
                     }
