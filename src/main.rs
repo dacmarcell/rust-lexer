@@ -84,6 +84,10 @@ impl Lexer {
                             self.counter += 1;
                         }
 
+                        if !self.current_char().is_numeric() {
+                            break;
+                        }
+
                         buffer.push(self.current_char());
                         self.counter += 1;
                     }
