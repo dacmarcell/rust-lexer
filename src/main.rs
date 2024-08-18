@@ -51,6 +51,15 @@ impl Lexer {
                     let mut buffer = String::new();
 
                     while self.current_char() != c {
+                        if self.current_char() == '\\' {
+                            self.counter += 1;
+                            match self.current_char() {
+                                'n' => buffer.push('\n'),
+                                't' => buffer.push('\t'),
+                                _ => {}
+                            }
+                        } else {
+                        }
                         buffer.push(self.current_char());
                         self.counter += 1;
                     }
