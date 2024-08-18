@@ -79,6 +79,11 @@ impl Lexer {
                             break;
                         }
 
+                        /* Float support */
+                        if self.current_char() == '.' {
+                            self.counter += 1;
+                        }
+
                         buffer.push(self.current_char());
                         self.counter += 1;
                     }
