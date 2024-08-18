@@ -1,4 +1,4 @@
-use std::{/* fs, */ env, fs};
+use std::{env, fs};
 
 #[derive(Debug)]
 enum TokenKind {
@@ -132,6 +132,5 @@ fn main() {
     };
 
     let mut lexer = Lexer::new(contents);
-
     lexer.lex();
 }
