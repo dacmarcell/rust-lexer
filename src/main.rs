@@ -45,12 +45,12 @@ impl Lexer {
                     tokens.push(Token::new(TokenKind::Assign, "=".to_owned()));
                     self.counter += 1
                 }
-                '\'' => {
+                '\'' | '"' => {
                     self.counter += 1;
 
                     let mut buffer = String::new();
 
-                    while self.current_char() != '\'' {
+                    while self.current_char() != c {
                         buffer.push(self.current_char());
                         self.counter += 1;
                     }
