@@ -6,6 +6,7 @@ enum TokenKind {
     Assign,
     Let,
     String,
+    Number,
 }
 
 #[derive(Debug)]
@@ -67,6 +68,22 @@ impl Lexer {
                     self.counter += 1;
 
                     tokens.push(Token::new(TokenKind::String, buffer));
+                }
+                _ if c.is_numeric() => {
+                    let mut buffer = String::new();
+                    buffer.push(c);
+                    self.counter += 1;
+
+                    loop {
+                        if self.counter >= self.source.len() {
+                            break;
+                        }
+
+                        buffer.push(self.current_char());
+                        self.counter += 1;
+                    }
+
+                    tokens.push(Token::new(TokenKind::Number, buffer));
                 }
                 _ if c.is_alphabetic() => {
                     let mut buffer = String::new();
