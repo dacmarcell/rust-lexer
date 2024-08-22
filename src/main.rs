@@ -4,6 +4,7 @@ use std::{env, fs};
 enum TokenKind {
     Identifier,
     Assign,
+    Var,
     Let,
     Const,
     String,
@@ -21,7 +22,6 @@ impl Token {
         Self { kind, literal }
     }
 }
-
 #[derive(Debug)]
 struct Lexer {
     source: Vec<char>,
@@ -108,6 +108,7 @@ impl Lexer {
                     let kind: TokenKind = match buffer.as_str() {
                         "let" => TokenKind::Let,
                         "const" => TokenKind::Const,
+                        "var" => TokenKind::Var,
                         _ => TokenKind::Identifier,
                     };
 
