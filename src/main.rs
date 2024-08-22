@@ -5,6 +5,7 @@ enum TokenKind {
     Identifier,
     Assign,
     Let,
+    Const,
     String,
     Number,
 }
@@ -106,6 +107,7 @@ impl Lexer {
 
                     let kind: TokenKind = match buffer.as_str() {
                         "let" => TokenKind::Let,
+                        "const" => TokenKind::Const,
                         _ => TokenKind::Identifier,
                     };
 
