@@ -1,12 +1,12 @@
-# Analisador Lexico criado na Linguagem Rust feito para a linguagem PL
+# A lexer for Java lang
 
-| Implementado? | Exemplo de Literal | Tipo de Token |
+| Implemented? | Literal Example | Token Type |
 |---------------|--------------------|---------------|
-| SIM           | 'single quote'     | String        |
-| SIM           | "double quote"     | String        |
-| SIM           | 123                | Number        |
-| SIM           | 123.456            | Number        |
-| SIM           | =                  | Assign        |
-| NAO           | +                  | Assign        |
-| SIM           | let                | Identifier    |
-| NAO           | const              | Identifier    |
+| Y           | 'single quote'     | String        |
+| Y           | "double quote"     | String        |
+| Y           | 123                | Number        |
+| Y           | 123.456            | Number        |
+| Y           | =                  | Assign        |
+| N           | +                  | Assign        |
+| Y           | let                | Identifier    |
+| N           | const              | Identifier    |
